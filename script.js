@@ -16,27 +16,27 @@ function newItem() {
   //if(enter === 13){
   //e.preventDefault();
   //list.append(li);
-}
-//create crossout function
-function crossOut() {
-  li.toggleClass("strike");
-}
-//add event to cross out list item
-li.on("dblclick", function crossOut() {
-  li.toggleClass("strike");
-});
+  //}
 
-//create delete crossOutButton
-let crossOutButton = $("<crossOutButton></crossOutButton>");
-//add it to document
-crossOutButton.append(document.createTextNode("X"));
-// add to list items
-li.append(crossOutButton);
-//create cross out event
-crossOutButton.on("click", deleteListItem);
-//not sure why this function is after the event
-function deleteListItem() {
-  li.addClass("delete");
+  //create crossout function
+  function crossOut() {
+    li.toggleClass("strike");
+  }
+  //add event to cross out list item
+  li.on("dblclick", function crossOut() {
+    li.toggleClass("strike");
+  });
+
+  //create delete crossOutButton
+  let crossOutButton = $("<crossOutButton></crossOutButton>");
+  //add it to document
+  crossOutButton.append(document.createTextNode("X"));
+  // add to list items
+  li.append(crossOutButton);
+  //create cross out event
+  crossOutButton.on("click", deleteListItem);
+  function deleteListItem() {
+    li.addClass("delete");
+  }
+  $("#list").sortable();
 }
-//I didn't change the sort item code, it looks like jquery
-$("#list").sortable();
