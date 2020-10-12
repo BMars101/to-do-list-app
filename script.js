@@ -1,6 +1,5 @@
 function newItem() {
   //initialize variables
-  let list = $("#list");
   let li = $("<li></li>");
   let inputValue = $("#input").val();
   li.append(inputValue);
@@ -9,7 +8,7 @@ function newItem() {
   if (inputValue === "") {
     alert("Please add an item to the list");
   } else {
-    list.append(li);
+    $("#list").append(li);
   }
   //ATTEMPT TO SUBMIT WITH ENTER KEY. DID NOT WORK.
   //inputValue.keyup(function(e){
